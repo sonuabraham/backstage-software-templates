@@ -18,7 +18,7 @@ spec:
           title: Component name
           type: string
           description: Provide a component (microservice) name
-          pattern: '^([a-zA-Z][a-zA-Z0-9]*)(-[a-zA-Z0-9]+)*$'$'
+          pattern: '^([a-zA-Z][a-zA-Z0-9]*)(-[a-zA-Z0-9]+)*$'
         environment:
           title: Environment
           type: string
@@ -35,8 +35,8 @@ spec:
       input:
         url: ./template
         values:
-          app_name: ${{parameters.component_id}}
-          app_env: ${{parameters.environment}}
+          app_name: ${{ parameters.component_id }}
+          app_env: ${{ parameters.environment }}
 
     - id: publish
       name: Publish
@@ -45,7 +45,7 @@ spec:
         allowedHosts:
           - github.com
         description: This is ${{ parameters.component_id }}
-        repoUrl: github.com?owner=sonuabraham&repo=${{parameters.component_id}}
+        repoUrl: github.com?owner=sonuabraham&repo=${{ parameters.component_id }}
         protectDefaultBranch: false
         repoVisibility: public
 
