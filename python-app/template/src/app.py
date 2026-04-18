@@ -16,7 +16,7 @@ def info():
         'message' : "Hello from Sonu!!!!!!!!!!)",
         'deployed_on' : "kubernetes",
         'env' : '${{values.app_env}}',
-        'app_name' : '${{values.app_env}}'
+        'app_name' : '${{values.app_nane}}'
     }
     )
 @app.route('/api/v1/healthz')
