@@ -1,4 +1,4 @@
-# Document for python-app
+# Document for ${{values.app_name}}
 
 This application has two endpoints:
 - `/api/v1/info`
