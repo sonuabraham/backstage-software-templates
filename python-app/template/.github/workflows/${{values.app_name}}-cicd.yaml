@@ -44,15 +44,15 @@ jobs:
       - name: Modify values file
         shell: bash
         run: |
-          echo ${{ needs.ci.outputs.commit_id }}
+          echo ${{ '${{ needs.ci.outputs.commit_id }}' }}
           curl -ksSL -o yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
           chmod +x yq
-          ./yq -i '.image.tag = "${{ needs.ci.outputs.commit_id }}"' charts/${{values.app_name}}/values-${{values.app_env}}.yaml
+          ./yq -i '.image.tag = "${{ '${{ needs.ci.outputs.commit_id }}' }}"' charts/${{values.app_name}}/values-${{values.app_env}}.yaml
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          message: "Update values.yaml with commit ${{ needs.ci.outputs.commit_id }}"
+          message: "Update values.yaml with commit ${{ '${{ needs.ci.outputs.commit_id }}' }}"
 
       - name: Install Argocd
         shell: bash
