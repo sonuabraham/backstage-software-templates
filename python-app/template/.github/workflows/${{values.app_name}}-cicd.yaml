@@ -11,6 +11,8 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
       - name: Declare some variables
         shell: bash
         run: |
