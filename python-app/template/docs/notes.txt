@@ -24,24 +24,3 @@
     host: 0.0.0.0
 5. Run yarn start again 
 
-
-docker run --rm -e AUTH_GITHUB_CLIENT_ID=Ov23lim0nvo5yAzmQFJ8 \
- -e AUTH_GITHUB_CLIENT_SECRET=b5ebc3729a7d956557946ea6ce83ca211bfbdb81 \
- -e GITHUB_TOKEN=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 \
- -p  3000:3000 -p 7007:7007 -it  -v /home/sonu/backstage-docker:/app \
- -w /app node:20-bookworm bash
-   
-apt-get update && apt-get install -y python3 python3-pip
-pip3 install mkdocs-techdocs-core --break-system-packages
-
-
-1.  kind create cluster --config kind-ingress.yaml
-
-2. kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
-helm upgrade --install argocd argo/argo-cd -n argocd --create-namespace -f values-argo.yaml 
-
-
-3. kind delete cluster --name ingress-cluster
-
-
-kubectl get secrets -n argocd
